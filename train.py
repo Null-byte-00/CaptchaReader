@@ -41,6 +41,6 @@ for epoch in range(EPOCHS):
     avg_loss /= len(train)
     test_avg_loss = test_loss(model)
     print(f"Epoch: {epoch}, Loss: {avg_loss}, test loss: {test_avg_loss}")
-    torch.save(model.state_dict(), 'model.pth')
+    torch.save(model.state_dict(), 'models/model.pth')
 
-torch.save(model.state_dict(), 'model.pth')
+torch.save(model.state_dict(), 'models/model.pth')
