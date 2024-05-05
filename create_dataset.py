@@ -11,7 +11,6 @@ def create_images(path='captchas/', num_images=100):
     image = ImageCaptcha(width=100, height=100)
     for i in range(num_images):
         for digit in string.digits:
-            #random_string = ''.join(random.choices(string.ascii_lowercase, k=5))
             image.write(digit, path + f'{digit}/{i}.png')
 
 

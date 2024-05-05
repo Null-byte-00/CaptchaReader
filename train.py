@@ -13,17 +13,14 @@ model = SingleDigitModel()
 train, test = dataset[:int(len(dataset) * 0.8)], dataset[int(len(dataset) * 0.8):]
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-#model.to(device)
 
 def test_loss(model):
     avg_loss = 0
     for i in test.index:
         x, y = test['image'][i], test['label'][i]
         x , y = torch.tensor(x), torch.tensor(y)
-        #x, y = x.to(device), y.to(device)
         target = torch.zeros(10)
         target[y] = 1
-        #target = target.to(device)
         loss = model.criterion(model.forward(x), target)
         avg_loss += loss
     avg_loss /= len(test)
@@ -36,8 +33,6 @@ for epoch in range(EPOCHS):
         x, y = train['image'][i], train['label'][i]
         x , y = torch.tensor(x), torch.tensor(y)
         target = torch.zeros(10)
-        #x = x.to(device)
-        #target = target.to(device)
         target[y] = 1
         loss = model.train_datapoint(x, target, verbose=False)
         avg_loss += loss
