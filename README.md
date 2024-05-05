@@ -9,7 +9,7 @@ The dataset consists of 10000 images(1000 for each digit). all of the images are
 ## training
 The model is trained with binary cross entropy loss function and gradient descent optimizer. and mini-batches of size 32
 ## running the model
-First download the compiled model from release page and put it in "models" folder.<br>
+First download the compiled model from [release page](https://github.com/Null-byte-00/CaptchaReader/releases/) and put it in "models" folder.<br>
 now you need a sample image. you can generate it using python captcha library
 ```python
 from captcha.image import ImageCaptcha
